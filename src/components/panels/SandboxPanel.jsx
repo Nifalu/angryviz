@@ -1,24 +1,22 @@
 import React from 'react';
 import ReactFlow, { Controls, Background } from 'reactflow';
 import 'reactflow/dist/style.css';
-import './SandboxPanel.css'; // We'll create this CSS file
 
 const initialNodes = [];
 const initialEdges = [];
 
 const SandboxPanel = () => {
     return (
-        <div className="sandbox-panel">
-            <h2>Pipeline Builder</h2>
-            <div className="reactflow-wrapper">
+        <div className="flex-1 flex flex-col">
+            <h2 className="text-lg font-semibold p-4 pb-2">Pipeline Builder</h2>
+            <div className="flex-1 bg-background border border-border m-4 mt-0 relative">
                 <ReactFlow
                     nodes={initialNodes}
                     edges={initialEdges}
                     fitView
-                    attribution={<a href="https://reactflow.dev">reactflow.dev</a>}
                 >
                     <Controls />
-                    <Background type="grid" variant="dots" />
+                    <Background type="dots" gap={12} size={1} />
                 </ReactFlow>
             </div>
         </div>
