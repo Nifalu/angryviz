@@ -1,3 +1,4 @@
+/* globals.css */
 :root {
     --radius: 0.3rem;
     --background: oklch(1 0 0);
@@ -67,8 +68,7 @@
     --sidebar-ring: oklch(0.541 0.281 293.009);
 }
 
-
-/* ReactFlow Dark Mode Overrides */
+/* ReactFlow Dark Mode Overrides (from your original globals.css) */
 .dark .react-flow__node {
     background-color: hsl(var(--card));
     color: hsl(var(--card-foreground));

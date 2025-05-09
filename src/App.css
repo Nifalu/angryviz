@@ -1,5 +1,52 @@
+/* App.css */
+html, body, #root { /* Assuming your React app mounts to <div id="root"> */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 .app-container {
-  display: flex; /* Enable Flexbox for the main container */
-  height: 100vh; /* Make the container take the full viewport height */
+  display: grid;
+  grid-template-rows: auto 1fr; /* Row for HeaderPanel, Row for main-content */
+  grid-template-columns: 100%;   /* Single column spanning full width */
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background); /* Use theme variable */
+  color: var(--foreground);       /* Use theme variable */
+  padding: 20px
+}
+
+.header-panel {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Title takes available space, toggle takes its content's width */
+  /* grid-template-rows: 5%; REMOVE or adjust: this might be too small if title wraps or for padding */
+  align-items: center; /* Vertically center items in the header */
+  width: 100vw;
+  min-height: 5vh; /* Use min-height instead of fixed height to allow content to define height */
+  padding-block: 0.5rem; /* Add some vertical padding */
+  overflow: hidden;
+  background-color: var(--sidebar); /* Use theme variable */
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border); /* Optional: add a border like other panels */
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Column for SandboxPanel (flexible), Column for ConfigurationPanel (fixed) */
+  overflow: hidden; /* Important for child elements using h-full/w-full */
+}
+
+/* Optional: If you want specific styling for title or toggle containers */
+.header-title {
+  /* Styles for the title, e.g., padding */
+}
+
+.header-toggle {
+  /* Styles for the toggle container, e.g., padding */
 }

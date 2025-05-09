@@ -1,14 +1,15 @@
+// src/components/panels/HeaderPanel.jsx
 import React from 'react';
-import { ThemeToggle } from '../colortheme/ThemeToggle.jsx';
+import { ThemeToggle } from '../colortheme/ThemeToggle'; // Adjusted import path
 
 const HeaderPanel = ({ title = "AngryViz" }) => {
     return (
-        <div className="h-14 border-b border-border bg-background flex items-center justify-between px-4 w-full">
-            <div className="font-semibold text-lg">{title}</div>
-            <div className="flex items-center gap-2">
+        <>
+            <div className="header-title font-semibold text-lg text-card-foreground pl-4">{title}</div> {/* Added pl-4 for some left padding */}
+            <div className="header-toggle flex items-center justify-end gap-2 pr-4"> {/* Added justify-end and pr-4 for padding */}
                 <ThemeToggle />
             </div>
-        </div>
+        </>
     );
 };
 

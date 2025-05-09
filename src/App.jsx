@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import './App.css';
 import ConfigurationPanel from './components/panels/ConfigurationPanel';
@@ -6,14 +7,13 @@ import HeaderPanel from './components/panels/HeaderPanel.jsx';
 
 const App = () => {
     return (
-        <div className="flex flex-col h-screen w-screen">
-            {/* Navigation Bar */}
-            <HeaderPanel title="AngryViz" />
-
-            {/* Main Content */}
-            <div className="flex flex-1 overflow-hidden">
-                <SandboxPanel />
-                <ConfigurationPanel />
+        <div className="app-container"> {/* Now a CSS Grid container */}
+            <div className="header-panel"> {/* This div now acts as the grid container for header items */}
+                <HeaderPanel title="AngryViz" />
+            </div>
+            <div className="main-content"> {/* Grid item in app-container's second row, AND a nested grid */}
+                <SandboxPanel />         {/* Grid item in main-content's first column */}
+                <ConfigurationPanel />   {/* Grid item in main-content's second column */}
             </div>
         </div>
     );
