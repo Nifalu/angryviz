@@ -3,7 +3,7 @@ import React from 'react';
 
 const ConfigurationPanel = () => {
     return (
-        <div className="h-full w-full bg-card grid grid-rows-[auto_1fr] rounded-lg border border-border overflow-hidden">
+        <div className="configuration-panel">
             <div className="px-4 py-3 border-b border-border">
                 <h2 className="text-lg font-semibold text-card-foreground">Configuration & Results</h2>
             </div>
